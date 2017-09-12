@@ -53,11 +53,12 @@ class ChatController: JSQMessagesViewController {
         
         self.navigationItem.title = topic.name
         
-//        let iv = UIImageView(image: #imageLiteral(resourceName: "whatsapp"))
-//        
-//        
-//        self.view.insertSubview(iv, at: 0)
-//        collectionView.backgroundColor = UIColor.clear
+        let iv = UIImageView(image: #imageLiteral(resourceName: "whatsapp")) //UIImageView(image: #imageLiteral(resourceName: "whatsapp"))
+        iv.frame.size = self.view.frame.size
+        iv.clipsToBounds = true
+        iv.contentMode = .scaleAspectFill
+        self.collectionView.backgroundView = iv
+        collectionView.backgroundColor = UIColor.clear
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
